@@ -24,7 +24,7 @@ public class SearchController : Controller
         ViewBag.columns = ListController.ColumnChoices;
         List<Job> jobs = new List<Job>();
 
-        if (string.IsNullOrEmpty(searchTerm) || searchType.Equals("all"))
+        if (string.IsNullOrEmpty(searchTerm) || searchTerm.ToLower().Equals("all"))
         {
             jobs = JobData.FindAll();
             ViewBag.jobs = jobs;

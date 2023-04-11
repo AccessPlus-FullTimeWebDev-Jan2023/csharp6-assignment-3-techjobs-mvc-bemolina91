@@ -28,13 +28,13 @@ public class SearchController : Controller
         {
             jobs = JobData.FindAll();
             ViewBag.jobs = jobs;
-            return View();
+            return View("Index");
         }
         else
         {
             jobs = JobData.FindByColumnAndValue(searchType, searchTerm);
             ViewBag.jobs = jobs;
-            return View();
+            return View("Index");
         }
     }
 }
